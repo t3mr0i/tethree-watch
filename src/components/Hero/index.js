@@ -20,15 +20,6 @@ const heroVariant = {
   visible: { opacity: 1, transition: { duration: 0.8 } },
 };
 
-const HeroTitle = styled.h1`
-  font-size: 64px;
-  margin-bottom: 20px;
-`;
-
-const HeroSubtitle = styled.p`
-  font-size: 24px;
-`;
-
 const Hero = () => {
   return (
     <HeroContainer
