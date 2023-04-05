@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const ContactContainer = styled.section`
@@ -65,31 +65,49 @@ const FormSubmitButton = styled.button`
   &:hover {
     background-color: #666;
   }
-  id="contact"
-
 `;
 
 const Contact = () => {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    // Implement form submission logic here
+
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('email', email);
+    formData.append('message', message);
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => alert('Success!'))
+      .catch((error) => alert(error));
   };
 
+  const handleNameChange = (event) => setName(event.target.value);
+  const handleEmailChange = (event) => setEmail(event.target.value);
+  const handleMessageChange = (event) => setMessage(event.target.value);
+
   return (
-    <ContactContainer data-scroll="contact">
+    <ContactContainer>
       <ContactTitle>Contact Us</ContactTitle>
       <ContactForm onSubmit={handleSubmit}>
         <FormGroup>
           <FormLabel>Name</FormLabel>
-          <FormInput type="text" required />
+          <FormInput type="text" value={name} onChange={handleNameChange} required />
         </FormGroup>
         <FormGroup>
           <FormLabel>Email</FormLabel>
-          <FormInput type="email" required />
+          <FormInput type="email" value={email} onChange={handleEmailChange} required />
         </FormGroup>
         <FormGroup>
           <FormLabel>Message</FormLabel>
-          <FormTextarea rows="5" required></FormTextarea>
+          <FormTextarea rows="5" value={message} onChange={handleMessageChange} required></FormTextarea>
         </FormGroup>
         <FormSubmitButton type="submit">Send Message</FormSubmitButton>
       </ContactForm>
