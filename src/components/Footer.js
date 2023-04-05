@@ -25,7 +25,7 @@ const NavLinkStyled = styled(NavLink)`
   &.active {
     /* Add styles for the active NavLink */
     font-weight: bold;
-    color: #ffffff;
+    color: #lightgrey;
   }
 
   ${({ footer }) =>

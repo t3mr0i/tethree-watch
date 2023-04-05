@@ -65,6 +65,8 @@ const FormSubmitButton = styled.button`
   &:hover {
     background-color: #666;
   }
+  id="contact"
+
 `;
 
 const Contact = () => {

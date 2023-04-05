@@ -23,6 +23,8 @@ code {
   --color-accent-light: #ff8c6e;
   --color-accent-dark: #d74b0b;
   --color-background: #F8F8F8;
+  --color-background-colored: #DAD0C4;
+
   --color-text: #333333;
   --color-text-light: #666666;
 }

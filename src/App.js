@@ -11,6 +11,7 @@ import EmailSubscription from './components/EmailSubscription';
 import Footer from './components/Footer';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
+import About from './components/About';
 
 const GlobalStyle = createGlobalStyle`
 
@@ -30,6 +31,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<><Hero /><Features /><ProductGallery /><Testimonials /><Contact /><EmailSubscription /></>} />
+        <Route path="/about" element={<About />} />
         <Route path="/impressum" element={<Impressum />} />
         <Route path="/datenschutz" element={<Datenschutz />} />
       </Routes>

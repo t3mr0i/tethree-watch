@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
+import LogoPic from '../assets/Logo.svg';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -11,7 +12,7 @@ const HeaderContainer = styled.header`
 `;
 
 const Logo = styled.img`
-  height: 50px;
+  height: 115px;
 `;
 
 const NavLinks = styled.ul`
@@ -41,16 +42,20 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 const Header = () => {
+
+
   return (
     <HeaderContainer>
-      <Logo src="assets/Logo.svg" alt="Tethree" />
+      <Link to="/">
+        <Logo src={LogoPic} alt="Tethree" />
+      </Link>
       <NavLinks>
         <StyledNavLink exact to="/">
           Home
         </StyledNavLink>
         <StyledNavLink to="/products">Products</StyledNavLink>
         <StyledNavLink to="/about">About</StyledNavLink>
-        <StyledNavLink to="/contact">Contact</StyledNavLink>
+        <StyledNavLink href="#contact">Contact</StyledNavLink>
       </NavLinks>
     </HeaderContainer>
   );
