@@ -73,19 +73,19 @@ const Features = () => {
   return (
     <FeaturesContainer>
       {featureList.map((feature, i) => (
-        <FeatureCard
+        <FeatureCard 
           key={feature.id}
           initial="hidden"
           animate="visible"
           variants={featureVariants}
           custom={i}
         >
-          <FeatureIcon
-            src={feature.icon}
-            alt={feature.title}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          />
+       <FeatureIcon
+  whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.9 }}
+>
+  {feature.icon}
+</FeatureIcon>
           <FeatureTitle
             whileHover={{ color: 'var(--color-accent)' }}
             whileTap={{ scale: 0.9 }}

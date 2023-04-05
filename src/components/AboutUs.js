@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-
+import detailShot from '../assets/Detail.JPG';
 const Section = styled.section`
   display: flex;
   justify-content: center;
@@ -79,9 +79,9 @@ const About = () => {
 
   return (
     <Section>
-      <ContentContainer>
+      <ContentContainer data-scroll="about">
         <Image
-          src="../src/assets/Detail.JPG"
+          src= {detailShot}
           alt="Tenylon Strap"
           variants={imageVariants}
           initial="hidden"
@@ -99,3 +99,4 @@ const About = () => {
 };
 
 export default About;
+

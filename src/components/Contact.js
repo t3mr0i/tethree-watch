@@ -76,7 +76,7 @@ const Contact = () => {
   };
 
   return (
-    <ContactContainer>
+    <ContactContainer data-scroll="contact">
       <ContactTitle>Contact Us</ContactTitle>
       <ContactForm onSubmit={handleSubmit}>
         <FormGroup>
