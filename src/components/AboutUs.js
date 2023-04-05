@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import detailShot from '../assets/Detail.JPG';
+
 const Section = styled.section`
   display: flex;
   justify-content: center;

@@ -94,7 +94,7 @@ const Contact = () => {
   const handleMessageChange = (event) => setMessage(event.target.value);
 
   return (
-    <ContactContainer>
+    <ContactContainer id="contact" data-scroll="contact">
       <ContactTitle>Contact Us</ContactTitle>
       <ContactForm onSubmit={handleSubmit}>
         <FormGroup>

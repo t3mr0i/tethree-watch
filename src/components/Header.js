@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import LogoPic from '../assets/Logo.svg';
-import { animateScroll } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll';
+import { Link as ScrollLink } from 'react-scroll';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -41,32 +42,20 @@ const StyledNavLink = styled.a`
   }
 `;
 
-const scrollToContact = () => {
-  animateScroll.scrollTo('[data-scroll="contact"]');
-};
-
-const scrollToAbout = () => {
-  animateScroll.scrollTo('[data-scroll="about"]');
-};
-
-const scrollToProduct = () => {
-  animateScroll.scrollTo('[data-scroll="products"]');
-};
-
 const Header = () => {
   return (
     <HeaderContainer data-scroll="top">
-      <a href="/" onClick={() => animateScroll.scrollToTop()}>
+      <a href="/" onClick={() => scroll.scrollToTop()}>
         <Logo src={LogoPic} alt="Tethree" />
       </a>
       <NavLinks>
-        <StyledNavLink href="#products" onClick={scrollToProduct}>
+        <StyledNavLink as={ScrollLink} to="products" smooth={true} duration={500}>
           Products
         </StyledNavLink>
-        <StyledNavLink href="#about" onClick={scrollToAbout}>
+        <StyledNavLink as={ScrollLink} to="about" smooth={true} duration={500}>
           About
         </StyledNavLink>
-        <StyledNavLink href="#contact" onClick={scrollToContact}>
+        <StyledNavLink as={ScrollLink} to="contact" smooth={true} duration={500}>
           Contact
         </StyledNavLink>
       </NavLinks>

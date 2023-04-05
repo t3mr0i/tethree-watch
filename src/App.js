@@ -13,7 +13,6 @@ import Footer from './components/Footer';
 import Impressum from './components/Impressum';
 import Datenschutz from './components/Datenschutz';
 import About from './components/AboutUs';
-import Scene from './components/Scene';
 import * as THREE from 'three';
 import { animateScroll as scrollTo } from 'react-scroll';
 
@@ -73,7 +72,6 @@ const App = () => {
           element={
             <>
               <Hero />
-              <Scene />
               <Features />
               <About scrollTo={scrollTo} />
               <ProductGallery />

@@ -77,7 +77,8 @@ const ProductGallery = () => {
   ];
 
   return (
-    <GalleryContainer>
+
+    <GalleryContainer id="products" data-scroll="products">
       <GalleryTitle>Our Collection</GalleryTitle>
       {products.map((product) => (
         <ProductCard key={product.id}>
