@@ -42,13 +42,13 @@ const ProductGallery = () => {
   const products = [
     {
       id: 1,
-      name: 'Classic Leather',
-      image: '/path/to/classic-leather.jpg',
+      name: 'Blue',
+      image: '../assets/Blau.JPG',
     },
     {
       id: 2,
-      name: 'Sporty Silicone',
-      image: '/path/to/sporty-silicone.jpg',
+      name: 'Grau',
+      image: '../assets/Grau.JPG',
     },
     // Add more products here
   ];

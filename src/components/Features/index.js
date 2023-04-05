@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
+import { FaCogs, FaClock, FaPalette } from 'react-icons/fa';
 
 const FeaturesContainer = styled.section`
   display: flex;
@@ -34,36 +35,35 @@ const FeatureDescription = styled.p`
   font-size: 16px;
   text-align: center;
 `;
+const featureVariants = {
+  hidden: { opacity: 0, y: -20 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { delay: i * 0.2, duration: 0.5 },
+  }),
+};
 
 const featureList = [
   {
     id: 1,
-    icon: 'path/to/icon1.svg',
+    icon: <FaCogs />,
     title: 'Premium Materials',
     description: 'Our straps are made from the highest quality materials to ensure durability and comfort.',
   },
   {
     id: 2,
-    icon: 'path/to/icon2.svg',
+    icon: <FaClock />,
     title: 'Easy Installation',
     description: 'Easily install and remove your watch straps with our quick-release spring bars.',
   },
   {
     id: 3,
-    icon: 'path/to/icon3.svg',
+    icon: <FaPalette />,
     title: 'Wide Selection',
     description: 'Choose from a variety of styles, materials, and colors to find the perfect strap for your watch.',
   },
 ];
-
-const featureVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, delay: i * 0.2 },
-  }),
-};
 
 const Features = () => {
   return (
