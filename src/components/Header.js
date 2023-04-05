@@ -10,9 +10,8 @@ const HeaderContainer = styled.header`
   background-color: var(--color-background);
 `;
 
-const Logo = styled.h1`
-  font-size: 32px;
-  color: var(--color-primary);
+const Logo = styled.img`
+  height: 50px;
 `;
 
 const NavLinks = styled.ul`
@@ -44,7 +43,7 @@ const StyledNavLink = styled(NavLink)`
 const Header = () => {
   return (
     <HeaderContainer>
-      <Logo>Tethree</Logo>
+      <Logo src="assets/Logo.svg" alt="Tethree" />
       <NavLinks>
         <StyledNavLink exact to="/">
           Home

@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import BlueImage from '../assets/Blau.JPG';
+import GrayImage from '../assets/Grau.JPG';
+import blackGreyTransparent from '../assets/Black-Grey-transparent.png';
 
 const GalleryContainer = styled.section`
   display: flex;
@@ -43,13 +46,33 @@ const ProductGallery = () => {
     {
       id: 1,
       name: 'Blue',
-      image: '../assets/Blau.JPG',
+      image: BlueImage,
     },
     {
       id: 2,
       name: 'Grau',
-      image: '../assets/Grau.JPG',
+      image: GrayImage,
     },
+    {
+        id: 3,
+        name: 'Grau',
+        image: blackGreyTransparent,
+      },
+      {
+        id: 4,
+        name: 'Grau',
+        image: GrayImage,
+      },
+      {
+        id: 5,
+        name: 'Grau',
+        image: GrayImage,
+      },
+      {
+        id: 6,
+        name: 'Grau',
+        image: GrayImage,
+      },
     // Add more products here
   ];
 

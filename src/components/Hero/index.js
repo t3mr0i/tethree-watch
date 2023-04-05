@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import heroImage from '../../assets/hero-image.jpg';
+import heroImage from '../../assets/hero-image.png';
 
 const HeroContainer = styled(motion.section)`
-  height: 100vh;
+  height: 50vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -36,10 +36,7 @@ const Hero = () => {
       animate="visible"
       variants={heroVariant}
     >
-      <div>
-        <HeroTitle>High-Quality Watch Straps</HeroTitle>
-        <HeroSubtitle>Upgrade your watch with our premium straps</HeroSubtitle>
-      </div>
+
     </HeroContainer>
   );
 };
