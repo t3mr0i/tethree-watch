@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import LogoPic from '../assets/Logo.svg';
 import { animateScroll } from 'react-scroll';
 
@@ -23,7 +22,7 @@ const NavLinks = styled.ul`
   padding: 0;
 `;
 
-const StyledNavLink = styled(NavLink)`
+const StyledNavLink = styled.a`
   color: var(--color-text);
   text-decoration: none;
   margin: 0 20px;
@@ -45,28 +44,29 @@ const StyledNavLink = styled(NavLink)`
 const scrollToContact = () => {
   animateScroll.scrollTo('[data-scroll="contact"]');
 };
-const scrollToAbout= () => {
+
+const scrollToAbout = () => {
   animateScroll.scrollTo('[data-scroll="about"]');
 };
 
-const scrollToProduct= () => {
-    animateScroll.scrollTo('[data-scroll="products"]');
-  };
+const scrollToProduct = () => {
+  animateScroll.scrollTo('[data-scroll="products"]');
+};
 
 const Header = () => {
   return (
     <HeaderContainer data-scroll="top">
-      <StyledNavLink to="/">
+      <a href="/" onClick={() => animateScroll.scrollToTop()}>
         <Logo src={LogoPic} alt="Tethree" />
-      </StyledNavLink>
+      </a>
       <NavLinks>
-        <StyledNavLink  onClick={scrollToProduct}>
-        Product
+        <StyledNavLink href="#products" onClick={scrollToProduct}>
+          Products
         </StyledNavLink>
-        <StyledNavLink onClick={scrollToAbout}>
+        <StyledNavLink href="#about" onClick={scrollToAbout}>
           About
         </StyledNavLink>
-        <StyledNavLink onClick={scrollToContact}>
+        <StyledNavLink href="#contact" onClick={scrollToContact}>
           Contact
         </StyledNavLink>
       </NavLinks>

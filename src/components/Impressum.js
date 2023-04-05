@@ -22,12 +22,12 @@ const Impressum = () => {
       <Heading>Impressum</Heading>
       {/* Add your Impressum content here */}
       <Paragraph>
-        Firmenname<br />
-        Straße und Hausnummer<br />
-        PLZ Ort<br />
-        Telefon: Telefonnummer<br />
-        E-Mail: email@example.com<br />
-        Geschäftsführer: Vorname Nachname<br />
+        Tethree by Kai Detmers<br />
+        Kommodore-Ziegenbein-Allee 10<br />
+        28217 Bremen<br />
+        Telefon: 01734038349<br />
+        E-Mail: t3mr0i@googlemail.com<br />
+        Geschäftsführer: Kai Detmers<br />
       </Paragraph>
       {/* Add more paragraphs if needed */}
     </ImpressumContainer>

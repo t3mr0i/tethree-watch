@@ -79,7 +79,7 @@ const About = () => {
 
   return (
     <Section>
-      <ContentContainer data-scroll="about">
+      <ContentContainer id="about" data-scroll="about">
         <Image
           src= {detailShot}
           alt="Tenylon Strap"

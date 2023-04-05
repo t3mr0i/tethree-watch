@@ -1,0 +1,59 @@
+import React, { useRef } from 'react';
+import { Canvas, useFrame } from 'react-three-fiber';
+import { Box, OrbitControls } from 'drei';
+
+const Watch = () => {
+  const ref = useRef();
+
+  useFrame(() => {
+    ref.current.rotation.y += 0.005;
+  });
+
+  return (
+    <Box ref={ref} args={[2, 2, 0.5]}>
+      <meshStandardMaterial attach="material" color="#ffffff" roughness={0.7} metalness={0.1} />
+    </Box>
+  );
+};
+
+const BackgroundParticles = () => {
+  const particleCount = 3000;
+  const particles = [];
+
+  for (let i = 0; i < particleCount; i++) {
+    const x = Math.random() * 2000 - 1000;
+    const y = Math.random() * 2000 - 1000;
+    const z = Math.random() * 2000 - 1000;
+    particles.push([x, y, z]);
+  }
+
+  return (
+    <group>
+      {particles.map((pos, i) => (
+        <mesh key={i} position={pos}>
+          <sphereBufferGeometry attach="geometry" args={[5, 16, 16]} />
+          <meshStandardMaterial attach="material" color="#ffffff" roughness={0.7} metalness={0.1} />
+        </mesh>
+      ))}
+    </group>
+  );
+};
+
+const WatchScene = () => {
+  return (
+    <Canvas
+      camera={{
+        fov: 75,
+        position: [0, 0, 10],
+      }}
+    >
+      <ambientLight intensity={0.1} />
+      <pointLight position={[10, 10, 10]} />
+      <Watch />
+      <BackgroundParticles />
+      <OrbitControls />
+    </Canvas>
+  );
+};
+
+export default WatchScene;
