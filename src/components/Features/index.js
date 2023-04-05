@@ -20,10 +20,12 @@ const FeatureCard = styled(motion.div)`
   margin: 10px;
 `;
 
-const FeatureIcon = styled.img`
-  width: 64px;
-  height: 64px;
+const FeatureIcon = styled.div`
+  font-size: 48px;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const FeatureTitle = styled.h3`
@@ -35,6 +37,7 @@ const FeatureDescription = styled.p`
   font-size: 16px;
   text-align: center;
 `;
+
 const featureVariants = {
   hidden: { opacity: 0, y: -20 },
   visible: (i) => ({
@@ -43,6 +46,7 @@ const featureVariants = {
     transition: { delay: i * 0.2, duration: 0.5 },
   }),
 };
+
 
 const featureList = [
   {
@@ -76,13 +80,28 @@ const Features = () => {
           variants={featureVariants}
           custom={i}
         >
-          <FeatureIcon src={feature.icon} alt={feature.title} />
-          <FeatureTitle>{feature.title}</FeatureTitle>
-          <FeatureDescription>{feature.description}</FeatureDescription>
+          <FeatureIcon
+            src={feature.icon}
+            alt={feature.title}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          />
+          <FeatureTitle
+            whileHover={{ color: 'var(--color-accent)' }}
+            whileTap={{ scale: 0.9 }}
+          >
+            {feature.title}
+          </FeatureTitle>
+          <FeatureDescription
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            {feature.description}
+          </FeatureDescription>
         </FeatureCard>
       ))}
     </FeaturesContainer>
-    );
+  );
 };
 
 export default Features;

@@ -1,13 +1,47 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const FooterContainer = styled.footer`
+  /* ... */
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  background-color: #333;
-  padding: 20px 40px;
-  color: #fff;
+  background-color: #f8f8f8;
+  padding: 20px 0;
+`;
+
+const NavLinkStyled = styled(NavLink)`
+  /* ... common styles ... */
+  color: grey;
+  padding-right: 5px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #cccccc;
+  }
+
+  &.active {
+    /* Add styles for the active NavLink */
+    font-weight: bold;
+    color: #ffffff;
+  }
+
+  ${({ footer }) =>
+    footer &&
+    `
+    color: #333;
+    margin: 0 15px;
+
+    &:hover {
+      color: #666;
+    }
+
+    &.active {
+      color: #333;
+    }
+  `}
 `;
 
 const FooterLogo = styled.h1`
@@ -43,20 +77,17 @@ const SocialIcon = styled.a`
   }
 `;
 
-const Footer = () => (
-  <FooterContainer>
-    <FooterLogo>Tethree</FooterLogo>
-    <FooterNav>
-      <FooterLink href="#privacy">Privacy Policy</FooterLink>
-      <FooterLink href="#terms">Terms of Service</FooterLink>
-    </FooterNav>
-    <SocialMedia>
-      <SocialIcon href="https://www.facebook.com/tethree" target="_blank" rel="noopener noreferrer">Facebook</SocialIcon>
-      <SocialIcon href="https://www.instagram.com/teth
-ree" target="_blank" rel="noopener noreferrer">Instagram</SocialIcon>
-<SocialIcon href="https://www.twitter.com/tethree" target="_blank" rel="noopener noreferrer">Twitter</SocialIcon>
-</SocialMedia>
-</FooterContainer>
-);
+const Footer = () => {
+    return (
+      <FooterContainer>
+        <NavLinkStyled to="/impressum" activeClassName="active">
+          Impressum
+        </NavLinkStyled>
+        <NavLinkStyled to="/datenschutz" activeClassName="active">
+          Datenschutz
+        </NavLinkStyled>
+      </FooterContainer>
+    );
+  };
 
 export default Footer;

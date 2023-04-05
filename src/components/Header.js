@@ -1,17 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
+import { NavLink } from 'react-router-dom';
 
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 20px 40px;
-  background-color: #fff;
+  background-color: var(--color-background);
 `;
 
 const Logo = styled.h1`
   font-size: 32px;
-  color: #333;
+  color: var(--color-primary);
 `;
 
 const NavLinks = styled.ul`
@@ -21,9 +22,23 @@ const NavLinks = styled.ul`
   padding: 0;
 `;
 
-const NavLink = styled.li`
-  margin-left: 30px;
+const StyledNavLink = styled(NavLink)`
+  color: var(--color-text);
+  text-decoration: none;
+  margin: 0 20px;
+  padding: 5px 0;
   font-size: 18px;
+  font-weight: 600;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    color: var(--color-accent);
+  }
+
+  &.active {
+    color: var(--color-primary);
+    border-bottom: 2px solid var(--color-primary);
+  }
 `;
 
 const Header = () => {
@@ -31,10 +46,12 @@ const Header = () => {
     <HeaderContainer>
       <Logo>Tethree</Logo>
       <NavLinks>
-        <NavLink>Home</NavLink>
-        <NavLink>Products</NavLink>
-        <NavLink>About</NavLink>
-        <NavLink>Contact</NavLink>
+        <StyledNavLink exact to="/">
+          Home
+        </StyledNavLink>
+        <StyledNavLink to="/products">Products</StyledNavLink>
+        <StyledNavLink to="/about">About</StyledNavLink>
+        <StyledNavLink to="/contact">Contact</StyledNavLink>
       </NavLinks>
     </HeaderContainer>
   );
