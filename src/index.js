@@ -3,6 +3,13 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { animateScroll } from 'react-scroll';
+
+animateScroll.scrollToTop({
+  duration: 0,
+  delay: 0,
+  smooth: false,
+});
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
