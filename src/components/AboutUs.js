@@ -17,6 +17,7 @@ const ContentContainer = styled.div`
   align-items: center;
   max-width: 800px;
   padding: 0 20px;
+  width: 90%;
 `;
 
 const Image = styled(motion.img)`
@@ -25,14 +26,22 @@ const Image = styled(motion.img)`
 `;
 
 const Title = styled(motion.h1)`
-  font-size: 32px;
+  font-size: 24px;
   margin: 0 0 20px 0;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+  }
 `;
 
 const Text = styled(motion.p)`
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.5;
   text-align: center;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const About = () => {

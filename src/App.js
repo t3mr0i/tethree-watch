@@ -33,38 +33,21 @@ body {
   height: 100%;
   z-index: -1;
 }
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
 `;
 
 const App = () => {
   const threeCanvasRef = useRef(null);
 
-  useEffect(() => {
-    const canvas = threeCanvasRef.current;
-    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true });
-    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-    const scene = new THREE.Scene();
-    const geometry = new THREE.BoxGeometry(1, 1, 1);
-    const material = new THREE.MeshBasicMaterial({ color: '#fff' });
-    const cube = new THREE.Mesh(geometry, material);
 
-    scene.add(cube);
-
-    camera.position.z = 5;
-
-    const animate = () => {
-      requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
-      renderer.render(scene, camera);
-    };
-
-    animate();
-  }, []);
 
   return (
     <Router>
       <GlobalStyle />
-      <canvas ref={threeCanvasRef} id="threeCanvas" />
       <Header scrollTo={scrollTo} />
       <Routes>
         <Route

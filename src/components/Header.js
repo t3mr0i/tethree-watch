@@ -10,10 +10,18 @@ const HeaderContainer = styled.header`
   align-items: center;
   padding: 20px 40px;
   background-color: var(--color-background);
+
+  @media (max-width: 768px) {
+    padding: 20px 20px;
+  }
 `;
 
 const Logo = styled.img`
   height: 115px;
+
+  @media (max-width: 768px) {
+    height: 80px;
+  }
 `;
 
 const NavLinks = styled.ul`
@@ -21,6 +29,10 @@ const NavLinks = styled.ul`
   list-style: none;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `;
 
 const StyledNavLink = styled.a`
@@ -42,9 +54,32 @@ const StyledNavLink = styled.a`
   }
 `;
 
+const HamburgerMenu = styled.button`
+  display: none;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
 const Header = () => {
   return (
     <HeaderContainer data-scroll="top">
+            <HamburgerMenu onClick={<NavLinks>
+        <StyledNavLink as={ScrollLink} to="products" smooth={true} duration={500}>
+          Products
+        </StyledNavLink>
+        <StyledNavLink as={ScrollLink} to="about" smooth={true} duration={500}>
+          About
+        </StyledNavLink>
+        <StyledNavLink as={ScrollLink} to="contact" smooth={true} duration={500}>
+          Contact
+        </StyledNavLink>
+      </NavLinks>}></HamburgerMenu>
+
       <a href="/" onClick={() => scroll.scrollToTop()}>
         <Logo src={LogoPic} alt="Tethree" />
       </a>

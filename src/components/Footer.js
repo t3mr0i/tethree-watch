@@ -6,28 +6,34 @@ import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 const FooterContainer = styled.footer`
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   background-color: #f8f8f8;
   padding: 20px 40px;
-`;
 
-const FooterLogo = styled(NavLink)`
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: grey;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `;
 
 const FooterNav = styled.nav`
   display: flex;
+  margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+  }
 `;
 
 const NavLinkStyled = styled(NavLink)`
   color: grey;
   padding-right: 5px;
+  margin-right: 5px;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 14px;
 
   &:hover {
     color: #cccccc;
@@ -37,6 +43,36 @@ const NavLinkStyled = styled(NavLink)`
     font-weight: bold;
     color: #333;
   }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+    padding-right: 15px;
+    margin-right: 15px;
+  }
+`;
+
+const SocialIcon = styled.a`
+  font-size: 20px;
+  color: grey;
+  text-decoration: none;
+  margin-left: 10px;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: #cccccc;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+    margin-left: 20px;
+  }
+`;
+
+const FooterLogo = styled(NavLink)`
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: grey;
 `;
 
 const SocialMedia = styled.div`
@@ -44,17 +80,6 @@ const SocialMedia = styled.div`
   align-items: center;
 `;
 
-const SocialIcon = styled.a`
-  font-size: 24px;
-  color: grey;
-  text-decoration: none;
-  margin-left: 20px;
-  transition: color 0.3s ease;
-
-  &:hover {
-    color: #cccccc;
-  }
-`;
 const FacebookIcon = styled(FaFacebook)``;
 const InstagramIcon = styled(FaInstagram)``;
 const TwitterIcon = styled(FaTwitter)``;

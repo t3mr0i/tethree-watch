@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import heroImage from '../../assets/hero-image.png';
 
 const HeroContainer = styled(motion.section)`
-  height: 50vh;
+  height: 40vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -13,8 +13,11 @@ const HeroContainer = styled(motion.section)`
   background-position: center;
   color: #fff;
   text-align: center;
-`;
 
+  @media (min-width: 768px) {
+    height: 50vh;
+  }
+`;
 const heroVariant = {
   hidden: { opacity: 0 },
   visible: { opacity: 1, transition: { duration: 0.8 } },

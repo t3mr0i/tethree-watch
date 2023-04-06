@@ -10,18 +10,23 @@ const ContactContainer = styled.section`
 `;
 
 const ContactTitle = styled.h2`
-  font-size: 36px;
+  font-size: 28px;
   color: #333;
   text-align: center;
   width: 100%;
   margin-bottom: 40px;
+
+  @media (min-width: 768px) {
+    font-size: 36px;
+  }
 `;
 
 const ContactForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 600px;
+  width: 100%;
+  max-width: 600px;
 `;
 
 const FormGroup = styled.div`
@@ -31,31 +36,44 @@ const FormGroup = styled.div`
   margin-bottom: 20px;
 `;
 
+
 const FormLabel = styled.label`
-  font-size: 16px;
+  font-size: 14px;
   color: #333;
   margin-bottom: 5px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const FormInput = styled.input`
-  font-size: 16px;
+  font-size: 14px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const FormTextarea = styled.textarea`
-  font-size: 16px;
+  font-size: 14px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
   width: 100%;
   resize: vertical;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 const FormSubmitButton = styled.button`
-  font-size: 16px;
+  font-size: 14px;
   padding: 10px 20px;
   background-color: #333;
   color: #fff;
@@ -64,6 +82,10 @@ const FormSubmitButton = styled.button`
   cursor: pointer;
   &:hover {
     background-color: #666;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 16px;
   }
 `;
 
